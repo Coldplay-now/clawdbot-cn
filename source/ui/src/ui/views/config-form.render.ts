@@ -197,8 +197,8 @@ export function renderConfigForm(props: ConfigFormProps) {
         <div class="config-empty__icon">${icons.search}</div>
         <div class="config-empty__text">
           ${searchQuery
-            ? `No settings match "${searchQuery}"`
-            : "No settings in this section"}
+            ? `没有匹配 "${searchQuery}" 的设置`
+            : "此分类中没有设置"}
         </div>
       </div>
     `;
