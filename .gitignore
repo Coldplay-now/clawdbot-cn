@@ -103,3 +103,4 @@ USER.md
 .secrets.baseline
 **/.secrets.baseline
 .detect-secrets.cfg
+截屏*.png
