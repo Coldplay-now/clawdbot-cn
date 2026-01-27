@@ -87,6 +87,26 @@ const SECTIONS: Array<{ key: string; label: string }> = [
   { key: "tools", label: "工具" },
   { key: "gateway", label: "网关" },
   { key: "wizard", label: "设置向导" },
+  // 额外分类
+  { key: "meta", label: "元数据" },
+  { key: "diagnostics", label: "诊断" },
+  { key: "logging", label: "日志" },
+  { key: "browser", label: "浏览器" },
+  { key: "ui", label: "界面" },
+  { key: "models", label: "模型" },
+  { key: "nodeHost", label: "节点主机" },
+  { key: "bindings", label: "绑定" },
+  { key: "broadcast", label: "广播" },
+  { key: "audio", label: "音频" },
+  { key: "media", label: "媒体" },
+  { key: "approvals", label: "审批" },
+  { key: "session", label: "会话" },
+  { key: "cron", label: "定时任务" },
+  { key: "web", label: "Web" },
+  { key: "discovery", label: "发现" },
+  { key: "canvasHost", label: "画布主机" },
+  { key: "talk", label: "语音" },
+  { key: "plugins", label: "插件" },
 ];
 
 type SubsectionEntry = {
