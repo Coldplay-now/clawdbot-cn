@@ -1,0 +1,105 @@
+# ====================
+# 系统文件
+# ====================
+.DS_Store
+**/.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ====================
+# 敏感信息 / API Keys
+# ====================
+.env
+.env.local
+.env.*.local
+*.env
+**/.env
+**/secrets.json
+**/credentials.json
+**/*secret*
+**/*credential*
+!**/*.example
+!**/credentials.ts
+!**/cli-credentials*.ts
+
+# Clawdbot 配置（可能包含 API Key）
+clawdbot.json
+.clawdbot/
+
+# ====================
+# 依赖和构建产物
+# ====================
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+build/
+coverage/
+.pnpm-store/
+pnpm-lock.yaml
+bun.lock
+bun.lockb
+*.bun-build
+**/*.bun-build
+
+# ====================
+# IDE 和编辑器
+# ====================
+.vscode/
+.idea/
+*.sublime-*
+.worktrees/
+
+# ====================
+# 测试和日志
+# ====================
+*.log
+logs/
+test-results/
+playwright-report/
+__screenshots__/
+
+# ====================
+# macOS / iOS 构建
+# ====================
+**/.build/
+**/.swiftpm/
+**/ModuleCache/
+*.xcodeproj/
+*.xcworkspace/
+*.ipa
+*.dSYM.zip
+*.mobileprovision
+*.xcfilelist
+Core/
+bin/
+
+# ====================
+# Android
+# ====================
+*.apk
+*.aab
+local.properties
+
+# ====================
+# 本地工具
+# ====================
+.serena/
+.local/
+vendor/
+
+# ====================
+# 其他
+# ====================
+.bundle.hash
+docker-compose.extra.yml
+IDENTITY.md
+USER.md
+*.tgz
+
+# Secrets baseline (可能包含敏感路径)
+.secrets.baseline
+**/.secrets.baseline
+.detect-secrets.cfg
