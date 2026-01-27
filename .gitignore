@@ -103,4 +103,13 @@ USER.md
 .secrets.baseline
 **/.secrets.baseline
 .detect-secrets.cfg
+
+# ====================
+# 本地工具和草稿
+# ====================
+CREATE_PDF_INSTRUCTIONS.md
+create_pdf.sh
+html_to_pdf.py
+make_pdf.command
+公众号文章*.md
 截屏*.png
