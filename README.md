@@ -5,6 +5,8 @@
 [![原项目](https://img.shields.io/badge/原项目-clawdbot%2Fclawdbot-blue?style=flat-square&logo=github)](https://github.com/clawdbot/clawdbot)
 [![官方文档](https://img.shields.io/badge/官方文档-docs.clawd.bot-green?style=flat-square)](https://docs.clawd.bot)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
+[![Localized by](https://img.shields.io/badge/Localized%20by-Cursor-purple?style=flat-square&logo=cursor)](https://cursor.sh)
+[![LLM](https://img.shields.io/badge/LLM-Claude%20Opus%204.5-orange?style=flat-square&logo=anthropic)](https://anthropic.com)
 
 ---
 
