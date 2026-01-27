@@ -3,9 +3,9 @@ import { icons } from "../icons";
 
 const COPIED_FOR_MS = 1500;
 const ERROR_FOR_MS = 2000;
-const COPY_LABEL = "Copy as markdown";
-const COPIED_LABEL = "Copied";
-const ERROR_LABEL = "Copy failed";
+const COPY_LABEL = "复制为 Markdown";
+const COPIED_LABEL = "已复制";
+const ERROR_LABEL = "复制失败";
 
 type CopyButtonOptions = {
   text: () => string;
