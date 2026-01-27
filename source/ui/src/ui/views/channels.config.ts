@@ -71,11 +71,11 @@ export function renderChannelConfigForm(props: ChannelConfigFormProps) {
   const analysis = analyzeConfigSchema(props.schema);
   const normalized = analysis.schema;
   if (!normalized) {
-    return html`<div class="callout danger">Schema unavailable. Use Raw.</div>`;
+    return html`<div class="callout danger">配置架构不可用，请使用原始模式。</div>`;
   }
   const node = resolveSchemaNode(normalized, ["channels", props.channelId]);
   if (!node) {
-    return html`<div class="callout danger">Channel config schema unavailable.</div>`;
+    return html`<div class="callout danger">频道配置架构不可用。</div>`;
   }
   const configValue = props.configValue ?? {};
   const value = resolveChannelValue(configValue, props.channelId);
@@ -104,7 +104,7 @@ export function renderChannelConfigSection(params: {
   return html`
     <div style="margin-top: 16px;">
       ${props.configSchemaLoading
-        ? html`<div class="muted">Loading config schema…</div>`
+        ? html`<div class="muted">加载配置架构中…</div>`
         : renderChannelConfigForm({
             channelId,
             configValue: props.configForm,
@@ -119,14 +119,14 @@ export function renderChannelConfigSection(params: {
           ?disabled=${disabled || !props.configFormDirty}
           @click=${() => props.onConfigSave()}
         >
-          ${props.configSaving ? "Saving…" : "Save"}
+          ${props.configSaving ? "保存中…" : "保存"}
         </button>
         <button
           class="btn"
           ?disabled=${disabled}
           @click=${() => props.onConfigReload()}
         >
-          Reload
+          重新加载
         </button>
       </div>
     </div>
