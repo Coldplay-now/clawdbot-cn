@@ -1,27 +1,41 @@
-# Clawdbot 中文汉化版 🇨🇳
+# Moltbot 中文汉化版 🇨🇳
 
-> 🦞 **Clawdbot** — 个人 AI 助手，通过聊天应用自动化你的日常任务
+> 🦞 **Moltbot**（原 Clawdbot）— 个人 AI 助手，通过聊天应用自动化你的日常任务
 
-[![原项目](https://img.shields.io/badge/原项目-clawdbot%2Fclawdbot-blue?style=flat-square&logo=github)](https://github.com/clawdbot/clawdbot)
-[![官方文档](https://img.shields.io/badge/官方文档-docs.clawd.bot-green?style=flat-square)](https://docs.clawd.bot)
+[![Moltbot](https://img.shields.io/badge/Moltbot-molt.bot-red?style=flat-square&logo=github)](https://molt.bot)
+[![原项目](https://img.shields.io/badge/GitHub-moltbot%2Fmoltbot-blue?style=flat-square&logo=github)](https://github.com/moltbot/moltbot)
+[![官方文档](https://img.shields.io/badge/官方文档-docs.molt.bot-green?style=flat-square)](https://docs.molt.bot)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Localized by](https://img.shields.io/badge/Localized%20by-Cursor-purple?style=flat-square&logo=cursor)](https://cursor.sh)
 [![LLM](https://img.shields.io/badge/LLM-Claude%20Opus%204.5-orange?style=flat-square&logo=anthropic)](https://anthropic.com)
 
 ---
 
+## 📢 项目更名通知
+
+> **重要**: 原项目 **Clawdbot** 已由作者 [@steipete](https://twitter.com/steipete) 更名为 **Moltbot**！
+> 
+> - 🌐 新官网: https://molt.bot
+> - 📖 新文档: https://docs.molt.bot  
+> - 🐙 新仓库: https://github.com/moltbot/moltbot
+>
+> 本汉化版已同步更新相关链接。CLI 命令仍为 `clawdbot`。
+
+---
+
 ## ✨ 这是什么？
 
-这是 [Clawdbot](https://github.com/clawdbot/clawdbot) 的 **中文汉化版本**，包含：
+这是 [Moltbot](https://github.com/moltbot/moltbot) 的 **中文汉化版本**，包含：
 
 - 🌐 **Web UI 完整汉化** - 控制台界面全部中文化
 - 📖 **中文使用文档** - 详细的使用指南和技术文档
+- 🔒 **安全加固指南** - 新手安全配置教程
 - 🔧 **示例技能** - 开箱即用的中文技能模板
 - 📊 **架构分析文档** - 深入的技术实现分析
 
 ### 控制台概览
 
-![Clawdbot 中文控制台](assets/screenshot-cn.png)
+![Moltbot 中文控制台](assets/screenshot-cn.png)
 
 ### 频道管理
 
@@ -33,13 +47,13 @@
 
 ---
 
-## 🔗 原项目链接
+## 🔗 项目链接
 
 | 资源 | 链接 |
 |------|------|
-| **GitHub 仓库** | https://github.com/clawdbot/clawdbot |
-| **官方文档** | https://docs.clawd.bot |
-| **官方网站** | https://clawd.bot |
+| **官方网站** | https://molt.bot |
+| **GitHub 仓库** | https://github.com/moltbot/moltbot |
+| **官方文档** | https://docs.molt.bot |
 | **技能市场** | https://clawdhub.com |
 
 ---
@@ -47,13 +61,13 @@
 ## 📦 安装
 
 ```bash
-curl -fsSL https://clawd.bot/install.sh | bash
+curl -fsSL https://molt.bot/install.sh | bash
 ```
 
 安装完成后运行初始设置：
 
 ```bash
-clawdbot setup
+clawdbot onboard
 ```
 
 ### 使用汉化版 Web UI
@@ -73,10 +87,10 @@ pnpm build
 cp -r ../dist/control-ui/* $(npm root -g)/clawdbot/dist/control-ui/
 
 # 重启网关
-clawdbot gateway
+clawdbot gateway restart
 ```
 
-访问 http://127.0.0.1:18789/__clawdbot__/ 即可看到中文界面。
+访问 http://127.0.0.1:18789 即可看到中文界面。
 
 ---
 
@@ -108,6 +122,7 @@ clawdbot dashboard
 
 | 文档 | 说明 |
 |------|------|
+| [Moltbot新手安全指引.md](Moltbot新手安全指引.md) | 🔒 **新手必读** - 安全配置教程 |
 | [Clawdbot使用指南.md](Clawdbot使用指南.md) | 完整的使用教程 |
 | [Clawdbot架构设计文档.md](Clawdbot架构设计文档.md) | 系统架构分析（含 Mermaid 图） |
 | [Clawdbot系统提示词与工具规划机制.md](Clawdbot系统提示词与工具规划机制.md) | 提示词设计和工具调用机制 |
@@ -119,7 +134,7 @@ clawdbot dashboard
 
 ## 🎯 核心功能
 
-Clawdbot 是一个开源的个人 AI 助手，支持：
+Moltbot 是一个开源的个人 AI 助手，支持：
 
 - 📧 管理邮件和收件箱
 - 📅 日历管理和提醒
@@ -144,6 +159,7 @@ Clawdbot 是一个开源的个人 AI 助手，支持：
 | `clawdbot channels login` | 登录渠道 |
 | `clawdbot skills` | 技能管理 |
 | `clawdbot doctor` | 健康检查 |
+| `clawdbot security audit` | 安全审计 |
 
 更多命令请查看 [使用指南](Clawdbot使用指南.md)。
 
@@ -191,7 +207,11 @@ skills/
 
 ## 🔒 安全加固
 
-Clawdbot 作为 AI Agent 具有较高权限，**强烈建议** 进行安全加固。
+Moltbot 作为 AI Agent 具有**系统级操作权限**，**强烈建议新手阅读安全指引**！
+
+### 📖 新手必读
+
+👉 **[Moltbot新手安全指引.md](Moltbot新手安全指引.md)** - 完整的安全配置教程
 
 ### 快速安全检查
 
@@ -203,12 +223,11 @@ clawdbot security audit --deep
 ls -la ~/.clawdbot/
 ```
 
-### 安全配置建议
+### 安全配置要点
 
 #### 1. 文件权限
 
 ```bash
-# 配置目录和文件应为仅所有者可读写
 chmod 700 ~/.clawdbot/
 chmod 600 ~/.clawdbot/clawdbot.json
 chmod 600 ~/.clawdbot/exec-approvals.json
@@ -216,64 +235,49 @@ chmod 600 ~/.clawdbot/exec-approvals.json
 
 #### 2. 敏感信息存储
 
-将 API Key 和 Token 存储在 `.env` 文件中，而非配置文件：
-
 ```bash
 # ~/.clawdbot/.env
-DEEPSEEK_API_KEY=sk-your-key
+OPENAI_API_KEY=sk-your-key
 TELEGRAM_BOT_TOKEN=123456:ABC...
 ```
 
 #### 3. 推荐安全配置
 
 ```json5
-// ~/.clawdbot/clawdbot.json
 {
   "gateway": {
     "mode": "local",
-    "auth": {
-      "token": "your-random-token"  // 启用 Gateway 认证
-    }
+    "auth": { "token": "your-random-token" }
   },
   "tools": {
-    "elevated": {
-      "enabled": false  // 禁用提权模式
-    }
+    "elevated": { "enabled": false }
   },
   "logging": {
-    "redactSensitive": "tools"  // 日志脱敏
-  },
-  "channels": {
-    "telegram": {
-      "dmPolicy": "pairing"  // 使用配对码验证
-    }
+    "redactSensitive": "tools"
   }
 }
 ```
 
-#### 4. 命令执行审批
+#### 4. exec 白名单
 
 ```json5
 // ~/.clawdbot/exec-approvals.json
 {
   "defaults": {
-    "security": "deny",      // 默认拒绝
-    "ask": "always",         // 每次询问
-    "askFallback": "deny"    // 无法询问时拒绝
+    "security": "deny",
+    "ask": "always"
   }
 }
 ```
 
 ### 安全检查清单
 
-- [ ] 配置文件权限为 `600`
-- [ ] 目录权限为 `700`
+- [ ] 运行 `clawdbot security audit --deep`，无 critical 问题
+- [ ] 配置文件权限为 `600`，目录权限为 `700`
 - [ ] Gateway 认证已启用
-- [ ] `elevated` 模式已禁用或严格限制
+- [ ] `elevated` 模式已禁用
 - [ ] `exec` 策略为 `deny` 或 `allowlist`
-- [ ] 敏感信息使用环境变量存储
-- [ ] 日志脱敏已启用
-- [ ] DM 策略为 `pairing` 或 `allowlist`
+- [ ] 敏感信息使用 `.env` 文件存储
 
 详细安全分析请查看 [Clawdbot安全评估报告.md](Clawdbot安全评估报告.md)。
 
@@ -291,10 +295,30 @@ TELEGRAM_BOT_TOKEN=123456:ABC...
 
 ## 📄 许可证
 
-本项目基于 [Clawdbot](https://github.com/clawdbot/clawdbot) 开源项目，遵循 MIT 许可证。
+本项目基于 [Moltbot](https://github.com/moltbot/moltbot) 开源项目，遵循 MIT 许可证。
 
 ---
 
 ## 🙏 致谢
 
-感谢 [Clawdbot](https://github.com/clawdbot/clawdbot) 团队的出色工作！
+### 向原作者致敬
+
+感谢 **[Peter Steinberger (@steipete)](https://twitter.com/steipete)** 和 Moltbot 社区创造了这个令人惊叹的项目！
+
+> *"At this point I don't even know what to call @moltbot. It is something new. After a few weeks in with it, this is the first time I have felt like I am living in the future since the launch of ChatGPT."* — @davemorin
+>
+> *"TLDR; open source built a better version of Siri that Apple ($3.6 trillion company) was sleeping on for years. Welcome to the AI era where a dude and a repo fills in the cracks of billion dollar industries."* — @Hesamation
+
+**Moltbot 是 AI Agent 领域的一次伟大尝试**：
+
+- 🦞 **本地优先** - 数据完全属于你，不依赖云服务
+- 🔧 **可扩展** - 技能系统让 AI 能力无限扩展
+- 🌐 **多渠道** - WhatsApp、Telegram、Discord、Slack、iMessage...
+- 🧠 **持久记忆** - 真正了解你的 AI 助手
+- 🔓 **开源透明** - 代码完全公开，社区驱动
+
+正如用户们所说：*"This is the future of personal AI assistants."*
+
+---
+
+**🦞 Happy Hacking with Moltbot!**
