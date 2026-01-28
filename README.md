@@ -112,6 +112,8 @@ clawdbot dashboard
 | [Clawdbot架构设计文档.md](Clawdbot架构设计文档.md) | 系统架构分析（含 Mermaid 图） |
 | [Clawdbot系统提示词与工具规划机制.md](Clawdbot系统提示词与工具规划机制.md) | 提示词设计和工具调用机制 |
 | [Clawdbot-ReAct循环与可观测性机制分析.md](Clawdbot-ReAct循环与可观测性机制分析.md) | Agent 核心循环分析 |
+| [Clawdbot-Telegram通信机制详解.md](Clawdbot-Telegram通信机制详解.md) | Telegram Bot 通信原理 |
+| [Clawdbot安全评估报告.md](Clawdbot安全评估报告.md) | 安全机制分析与加固建议 |
 
 ---
 
@@ -180,8 +182,100 @@ skills/
 | 路径 | 说明 |
 |------|------|
 | `~/.clawdbot/clawdbot.json` | 主配置文件 |
+| `~/.clawdbot/.env` | 敏感信息（API Key 等） |
+| `~/.clawdbot/exec-approvals.json` | 命令执行审批配置 |
 | `~/clawd` | 默认工作区 |
 | `~/.clawdbot/agents/` | Agent 数据 |
+
+---
+
+## 🔒 安全加固
+
+Clawdbot 作为 AI Agent 具有较高权限，**强烈建议** 进行安全加固。
+
+### 快速安全检查
+
+```bash
+# 运行内置安全审计
+clawdbot security audit --deep
+
+# 检查配置文件权限
+ls -la ~/.clawdbot/
+```
+
+### 安全配置建议
+
+#### 1. 文件权限
+
+```bash
+# 配置目录和文件应为仅所有者可读写
+chmod 700 ~/.clawdbot/
+chmod 600 ~/.clawdbot/clawdbot.json
+chmod 600 ~/.clawdbot/exec-approvals.json
+```
+
+#### 2. 敏感信息存储
+
+将 API Key 和 Token 存储在 `.env` 文件中，而非配置文件：
+
+```bash
+# ~/.clawdbot/.env
+DEEPSEEK_API_KEY=sk-your-key
+TELEGRAM_BOT_TOKEN=123456:ABC...
+```
+
+#### 3. 推荐安全配置
+
+```json5
+// ~/.clawdbot/clawdbot.json
+{
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "token": "your-random-token"  // 启用 Gateway 认证
+    }
+  },
+  "tools": {
+    "elevated": {
+      "enabled": false  // 禁用提权模式
+    }
+  },
+  "logging": {
+    "redactSensitive": "tools"  // 日志脱敏
+  },
+  "channels": {
+    "telegram": {
+      "dmPolicy": "pairing"  // 使用配对码验证
+    }
+  }
+}
+```
+
+#### 4. 命令执行审批
+
+```json5
+// ~/.clawdbot/exec-approvals.json
+{
+  "defaults": {
+    "security": "deny",      // 默认拒绝
+    "ask": "always",         // 每次询问
+    "askFallback": "deny"    // 无法询问时拒绝
+  }
+}
+```
+
+### 安全检查清单
+
+- [ ] 配置文件权限为 `600`
+- [ ] 目录权限为 `700`
+- [ ] Gateway 认证已启用
+- [ ] `elevated` 模式已禁用或严格限制
+- [ ] `exec` 策略为 `deny` 或 `allowlist`
+- [ ] 敏感信息使用环境变量存储
+- [ ] 日志脱敏已启用
+- [ ] DM 策略为 `pairing` 或 `allowlist`
+
+详细安全分析请查看 [Clawdbot安全评估报告.md](Clawdbot安全评估报告.md)。
 
 ---
 
