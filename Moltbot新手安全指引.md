@@ -4,6 +4,26 @@
 
 ---
 
+## 关于本文档
+
+本文档来自 **Moltbot 中文汉化版** 项目，提供完整的中文使用文档和 Web UI 汉化。
+
+| 资源 | 链接 |
+|------|------|
+| **汉化版仓库** | https://github.com/Coldplay-now/clawdbot-cn |
+| **Moltbot 官网** | https://molt.bot |
+| **Moltbot GitHub** | https://github.com/moltbot/moltbot |
+| **官方文档** | https://docs.molt.bot |
+
+### 汉化版包含
+
+- 🌐 **Web UI 完整汉化** - 控制台界面全部中文化
+- 📖 **中文使用文档** - 详细的使用指南和技术文档
+- 🔒 **安全加固指南** - 本文档
+- 📊 **架构分析文档** - 深入的技术实现分析
+
+---
+
 ## 目录
 
 1. [为什么需要安全配置？](#为什么需要安全配置)
